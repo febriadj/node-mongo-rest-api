@@ -14,9 +14,12 @@ router.post('/', (req, res, next) => {
 
   const karyawan = new dbKaryawan({
     nik: nik,
-    nama: { awal: namaAwal, akhir: namaAkhir },
+    nama: { 
+      awal: namaAwal.toLowerCase(),
+      akhir: namaAkhir.toLowerCase() 
+    },
     umur: umur,
-    posisi: posisi
+    posisi: posisi.toLowerCase()
   })
   
   karyawan.save()

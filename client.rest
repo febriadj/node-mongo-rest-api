@@ -9,7 +9,7 @@ Content-Type: application/json
 {
   "nik": "2011501224",
   "namaAwal": "Febri",
-  "namaAkhir": "Adji",
+  "namaAkhir": "Akhir",
   "umur": 19,
   "posisi": "Fullstack Developer"
 }
