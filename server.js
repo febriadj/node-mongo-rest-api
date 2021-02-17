@@ -10,7 +10,9 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-mongoose.connect(process.env.DATABASE_URI, { useUnifiedTopology: true, useNewUrlParser: true })
+app.use(require('./routes/index'))
+
+mongoose.connect(process.env.DATABASE_URI, { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
   .then(result => console.log('mongo connected'))
   .catch(err => console.log(err))
 
