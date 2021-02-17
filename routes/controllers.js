@@ -10,7 +10,7 @@ router.get('/', (req, res, next) => {
 router.post('/', (req, res, next) => {
   const { nik, namaAwal, namaAkhir, umur, posisi } = req.body
 
-  if ( !nik || !namaAwal || !namaAkhir || !umur || !posisi ) return console.log('data ada yang belum ditambahkan')
+  if ( !nik || !namaAwal || !namaAkhir || !umur || !posisi ) return console.log('Data ada yang belum ditambahkan')
 
   const karyawan = new dbKaryawan({
     nik: nik,
@@ -24,10 +24,7 @@ router.post('/', (req, res, next) => {
   
   karyawan.save()
     .then(result => res.json({ body: 'Data berhasil ditambahkan' }))
-    .catch(err => { 
-      console.log(err)
-      res.status(401).json({ body: 'Gagal menambahkan data' })
-    })
+    .catch(err => console.log(err))
 })
 
 router.delete('/', (req, res, next) => {
@@ -38,10 +35,7 @@ router.delete('/', (req, res, next) => {
       console.log('Data tidak ditemukan')
       res.sendStatus(403)
     })
-    .catch(err => {
-      console.log(err)
-      res.sendStatus(401)
-    })
+    .catch(err => console.log(err))
 })
 
 module.exports = router
