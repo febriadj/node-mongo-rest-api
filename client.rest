@@ -7,11 +7,11 @@ POST http://localhost:3000/api
 Content-Type: application/json
 
 {
-  "nik": "2011501224",
-  "namaAwal": "Febri",
-  "namaAkhir": "Akhir",
+  "nik": "nomer nik",
+  "namaAwal": "nama awal",
+  "namaAkhir": "nama akhir",
   "umur": 19,
-  "posisi": "Fullstack Developer"
+  "posisi": "fullstack developer"
 }
 
 ###
