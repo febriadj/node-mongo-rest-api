@@ -14,6 +14,20 @@ Content-Type: application/json
   "posisi": "fullstack developer"
 }
 
+
+###
+
+PUT http://localhost:3000/api?nik=2011501224
+Content-Type: application/json
+
+{
+  "nik": "2011501224",
+  "namaAwal": "febri",
+  "namaAkhir": "adji",
+  "umur": 19,
+  "posisi": "fullstack developer"
+}
+
 ###
 
 DELETE http://localhost:3000/api

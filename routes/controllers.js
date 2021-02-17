@@ -23,7 +23,31 @@ router.post('/', (req, res, next) => {
   })
   
   karyawan.save()
-    .then(result => res.json({ body: 'Data berhasil ditambahkan' }))
+    .then(result => res.json({ body: 'data berhasil ditambahkan' }))
+    .catch(err => console.log(err))
+})
+
+router.put('/', (req, res, next) => {
+  const query = req.query.nik
+  const { nik, namaAwal, namaAkhir, umur, posisi } = req.body
+
+  const karyawan = {
+    nik: nik,
+    nama: { 
+      awal: namaAwal.toLowerCase(), 
+      akhir: namaAkhir.toLowerCase() 
+    },
+    umur: umur,
+    posisi: posisi.toLowerCase()
+  }
+
+  dbKaryawan.findOneAndUpdate({ nik: query }, karyawan )
+    .then(result => {
+      if ( result ) return res.json({ body: 'update data berhasil' })
+      
+      console.log('data tidak ditemukan - gagal update')
+      res.sendStatus(403)
+    })
     .catch(err => console.log(err))
 })
 
@@ -31,8 +55,9 @@ router.delete('/', (req, res, next) => {
   const { nik } = req.body
   dbKaryawan.findOneAndDelete({ nik: nik })
     .then(result => {
-      if ( result ) return res.json({ body: 'Data berhasil dihapus' })
-      console.log('Data tidak ditemukan')
+      if ( result ) return res.json({ body: 'data berhasil dihapus' })
+      
+      console.log('data tidak ditemukan - gagal menghapus')
       res.sendStatus(403)
     })
     .catch(err => console.log(err))

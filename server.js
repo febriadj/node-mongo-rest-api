@@ -12,7 +12,7 @@ app.use(bodyParser.json())
 
 app.use(require('./routes/index'))
 
-mongoose.connect(process.env.DATABASE_URI, { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
+mongoose.connect(process.env.DATABASE_URI, { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false })
   .then(result => console.log('mongo connected'))
   .catch(err => console.log(err))
 
