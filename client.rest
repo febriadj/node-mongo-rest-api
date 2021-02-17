@@ -7,23 +7,22 @@ POST http://localhost:3000/api
 Content-Type: application/json
 
 {
-  "nik": "nomer nik",
-  "namaAwal": "nama awal",
-  "namaAkhir": "nama akhir",
-  "umur": 19,
-  "posisi": "fullstack developer"
+  "nik": "17022047",
+  "namaAwal": "Erehh",
+  "namaAkhir": "Iyegeeh",
+  "umur": 20,
+  "posisi": "ngerumbling"
 }
-
 
 ###
 
-PUT http://localhost:3000/api?nik=2011501224
+PUT http://localhost:3000/api?nik=17022047
 Content-Type: application/json
 
 {
-  "nik": "2011501224",
-  "namaAwal": "febri",
-  "namaAkhir": "adji",
+  "nik": "17022048",
+  "namaAwal": "Febri",
+  "namaAkhir": "Adji",
   "umur": 19,
   "posisi": "fullstack developer"
 }
@@ -33,4 +32,4 @@ Content-Type: application/json
 DELETE http://localhost:3000/api
 Content-Type: application/json
 
-{ "nik": "2011501224" }
+{ "nik": "17022047" }
